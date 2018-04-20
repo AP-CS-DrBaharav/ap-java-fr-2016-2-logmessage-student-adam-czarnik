@@ -14,26 +14,16 @@ public class SystemLog
 
   /* Part (c) */
 
-  public List<LogMessage> removeMessages(String keyword)
-
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+  public List<LogMessage> removeMessages(String keyword) {
+          ArrayList<LogMessage> out = new ArrayList<LogMessage>();
+          for (int i=0; i<messageList.size(); ++i) {
+              if (messageList.get(i).containsWord(keyword) == true) {
+                  out.add(messageList.remove(i));
+                  i--;
+              }
+          }
+          return out;
+  }   
 
   public String toString()
   {
